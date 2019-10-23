@@ -1,0 +1,33 @@
+<!--
+ * @Autor: ErioY
+ * @Date: 2019-10-20 11:15:46
+ * @Email: 1973545559@qq.com
+ * @Github: https://github.com/ErioY
+ * @LastEditors: ErioY
+ * @LastEditTime: 2019-10-20 11:34:18
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div id="content"></div>
+        <input type="text" id="inputC">
+        <button id="send">发送</button>
+    </div>
+</body>
+</html>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+$("#send").click(function() {
+    let str = $("#inputC").val();
+    str = str.replace(/</g,"&lt;");
+    str = str.replace(/>/g,"&gt;");
+    $("#content").html($("#content").html() + str);
+});
+</script>
